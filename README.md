@@ -7,9 +7,7 @@ toolchains, and local verification details for the work that the manual defines.
 
 ## Pair
 
-Replace the two entries below. An assigned trio adds one entry.
-
-- Full Name (`@github-username`)
+- Carlo Joshua De Lemos (`cjdelemos`)
 - Rose Antonette Kaindoy (`rskaindoy`)
 
 ## Files You May Change
