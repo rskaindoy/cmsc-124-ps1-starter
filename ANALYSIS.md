@@ -2,12 +2,18 @@
 
 ## NO. 1
 
-<answer>
+The dt_array.c can be compared to the much more dynamic Python list. In Python, it automatically chooses a lower index of 0 and it can’t be changed. In memory allocation, Python’s implementation has extra allocation in order to not have to allocate every time the size of the array has to grow. That means that it is a slight bit greedier than our implementation.
+
+
+We also coded dt_list.c that can also be compared to the same Python list. Although, in our implementation, it is a linked list and Python’s list is backed by a dynamic array. The traversal cost to go to a specific index for our dt_list is O(n) and Python’s list is O(1). In large enough lists, dt_list would scale up in complexity while Python would stay constant.
+
+
+Another comparison that can be made is dt_enum.py and Python’s enum. The enum that we coded was represented by basically only integers. Python’s enum is represented by python objects which means that it can store other info like Color.RED.value and Color.RED.name. Of course, since it’s an entire python object it would be stored in a bigger storage than just an integer. It would require bigger memory but it is way easier to use, and also has more features compared to our C implementation.
 
 
 ## NO. 2
 
-<answer>
+Our coded tag check in dt_value_as_int doesn’t force the check, which means that there are some things that you can skip. If the programmer decides that their code is gonna surely result in having an int, they can access the value without having to do another tag check. If you access the value, and you use it for some code other than the tag requires, it will result in undefined behavior, such as interpreting an integer as a pointer, it will lead to some random value. The trade off is very much the same trade offs you get while choosing to use C, you get full low level access to the memory but the guard rails are gone. The programmer is fully responsible for the safety of their own code. Another trade-off is that C won't force the programmer to handle every possible tag, but languages with the compilers that force the check  always detect missing cases at compile time.
 
 
 ## NO. 3
